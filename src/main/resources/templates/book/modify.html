@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>도서 수정</title>
+    <link href="../css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+<div>
+    <form id="modifyForm" th:action="@{/book/modify}" method="post">
+    <table>
+        <tr>
+            <th>도서 ID</th>
+            <td><input type="text" name="bookid" th:value="${dto.bookid}" readonly></td>
+        </tr>
+        <tr>
+            <th>도서 제목</th>
+            <td><input type="text" name="booktitle" th:value="${dto.booktitle}"></td>
+        </tr>
+        <tr>
+            <th>작가</th>
+            <td><input type="text" name="bookwriter" th:value="${dto.bookwriter}"></td>
+        </tr>
+        <tr>
+            <th>소개</th>
+            <td><input type="text" name="bookcontent" th:value="${dto.bookcontent}"></td>
+        </tr>
+    </table>
+    <button type="submit">수정</button>
+    <button type="reset">취소</button>
+    </form>
+</div>
+
+</body>
+</html>

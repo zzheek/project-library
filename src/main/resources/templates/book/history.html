@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>도서 대출이력</title>
+  <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+<div>
+  <table>
+    <tr>
+      <th>대출일</th>
+      <th>반납일</th>
+      <th>회원아이디</th>
+    </tr>
+    <tr th:each="history : ${bookHistory}">
+      <td th:text="${history.bookloandate}"></td>
+      <td th:text="${history.bookduedate}"></td>
+      <td th:text="${history.memberid}"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
