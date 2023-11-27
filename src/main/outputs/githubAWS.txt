@@ -1,0 +1,5 @@
+github:
+https://github.com/zzheek/project-library
+
+aws:
+https://ec2-3-34-181-228.ap-northeast-2.compute.amazonaws.com:8080/
