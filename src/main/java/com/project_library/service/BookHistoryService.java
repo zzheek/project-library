@@ -9,5 +9,5 @@ public interface BookHistoryService {
 
     List<BookHistoryDTO> findBookHistory(Long bookid);
 
-    void returnbook(Long bookid);
+    void returnbook(Long bookhistoryid);
 }

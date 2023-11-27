@@ -1,3 +1,4 @@
+
 package com.project_library.controller;
 
 import com.project_library.dto.MemberDTO;
@@ -58,7 +59,7 @@ public class MemberController {
             for (String key : validatorResult.keySet()) {
                 model.addAttribute(key, validatorResult.get(key));
             }
-            return "/member/join";
+            return "member/join";
         }
 
         memberService.join(memberDTO);

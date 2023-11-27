@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class BookHistoryDTO {
 
+    private Long      bookhistoryid; // 도서 이력 아이디
     private Long      bookid;
     private String    memberid;
     private LocalDate bookloandate;

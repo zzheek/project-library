@@ -30,8 +30,8 @@ public class BookHistoryServiceImpl implements BookHistoryService{
     }
 
     @Override
-    public void returnbook(Long bookid) {
-        Optional<BookHistory> result = bookHistoryRepository.findById(bookid);
+    public void returnbook(Long bookhistoryid) {
+        Optional<BookHistory> result = bookHistoryRepository.findById(bookhistoryid);
         if (result.isPresent()) {
             BookHistory bookHistory = result.get();
             bookHistory.setBookduedate(LocalDate.now());

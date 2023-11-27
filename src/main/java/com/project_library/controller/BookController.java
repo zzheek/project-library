@@ -76,7 +76,7 @@ public class BookController {
         BookDTO bookDTO = bookService.detail(bookid);
         model.addAttribute("dto", bookDTO);
 
-        return "/book/detail";
+        return "book/detail";
 
     }
 
@@ -98,7 +98,7 @@ public class BookController {
         BookDTO bookDTO = bookService.detail(bookid);
         model.addAttribute("dto", bookDTO);
 
-        return "/book/modify";
+        return "book/modify";
     }
 
     // 도서 수정
@@ -121,16 +121,17 @@ public class BookController {
         model.addAttribute("bookHistory", bookHistory);
         model.addAttribute("bookid", bookid);  // 이 부분 추가
 
-
-        return "/book/history";
+//        log.info("@@@@@@" + BookHistoryDT);
+        return "book/history";
     }
 
+
     // 도서 반납
-    @PostMapping("/return/{bookid}")
-    public String returnBook(@PathVariable Long bookid) {
+    @PostMapping("/return")
+    public String returnBook(@RequestParam Long bookhistoryid, @RequestParam Long bookid) {
 
         bookService.returnbook(bookid);
-        bookHistoryService.returnbook(bookid);
+        bookHistoryService.returnbook(bookhistoryid);
 
         // 반납 후 이동할 페이지
         return "redirect:/book/list";
